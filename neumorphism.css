@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: #e0ded9;
+    min-height: 100vh;
+    color: #2c2c2c;
+    position: relative;
+    /* Subtle paper grain effect */
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Header - Neumorphic with Skeuomorphic Texture */
+.header {
+    background: linear-gradient(145deg, #a8906f 80%, #7c6246 100%);
+    border-radius: 24px;
+    padding: 32px 16px;
+    margin-bottom: 32px;
+    box-shadow: 
+        8px 8px 24px #bebebe,
+        -8px -8px 24px #ffffff,
+        0 2px 8px 2px rgba(90,70,40,0.14) inset;
+    position: relative;
+    overflow: hidden;
+    background-image:
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 8px),
+        repeating-linear-gradient(-45deg, rgba(0,0,0,0.03) 0 2px, transparent 2px 8px);
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Neumorphic Profile Image */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background: #e0ded9;
+    box-shadow: 
+        8px 8px 24px #bebebe,
+        -8px -8px 24px #ffffff,
+        0 2px 8px 2px rgba(0,0,0,0.08) inset;
+    border: 5px solid #bda77b;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="15" fill="%23666"/><path d="M25 70 Q50 60 75 70 Q75 80 50 85 Q25 80 25 70" fill="%23666"/></svg>');
+    background-size: cover;
+}
+
+.name {
+    color: #6d4c2b;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 1px 2px 4px #fff, 0 1px 0 #bda77b;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.title {
+    color: #bda77b;
+    font-size: 1.1em;
+    font-style: italic;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+/* Navigation - Neumorphic with Wood Texture */
+.nav {
+    background: linear-gradient(145deg, #bda77b 85%, #a8906f 100%);
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 32px;
+    box-shadow: 
+        6px 6px 18px #bebebe,
+        -6px -6px 18px #ffffff,
+        0 1px 4px 1px rgba(90,70,40,0.10) inset;
+    position: relative;
+    background-image:
+        repeating-linear-gradient(90deg, rgba(139, 69, 19, 0.08) 0 2px, transparent 2px 20px);
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-item {
+    background: #e0ded9;
+    color: #6d4c2b;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 
+        4px 4px 12px #bebebe,
+        -4px -4px 12px #ffffff;
+    border: 1px solid #d6c5a2;
+    transition: all 0.18s cubic-bezier(.4,2,.3,1);
+}
+
+.nav-item:hover {
+    box-shadow: 
+        2px 2px 6px #bebebe,
+        -2px -2px 6px #ffffff,
+        0 0 0 4px #bda77b44;
+    background: #f6f4ee;
+}
+
+/* Content Cards - Neumorphic Paper */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.card {
+    background: #f5f3eb;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 
+        8px 8px 24px #bebebe,
+        -8px -8px 24px #ffffff,
+        0 2px 8px 2px rgba(0,0,0,0.04) inset;
+    border: 2px solid #e4dbc5;
+    position: relative;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.01) 2px, rgba(0,0,0,0.01) 4px);
+}
+
+.card-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 14px;
+    color: #6d4c2b;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+.card-content {
+    line-height: 1.7;
+    color: #2c2c2c;
+}
+
+/* Skills - Neumorphic Badges */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill {
+    background: #e0ded9;
+    color: #6d4c2b;
+    padding: 8px 18px;
+    border-radius: 22px;
+    font-size: 0.95em;
+    font-weight: bold;
+    box-shadow: 
+        2px 2px 8px #bebebe,
+        -2px -2px 8px #ffffff;
+    border: 1px solid #d6c5a2;
+    transition: all 0.2s cubic-bezier(.4,2,.3,1);
+    cursor: pointer;
+}
+
+.skill:hover {
+    background: #f6f4ee;
+    box-shadow: 
+        1px 1px 4px #bebebe,
+        -1px -1px 4px #ffffff,
+        0 0 12px #bda77b44;
+    transform: scale(1.07);
+}
+
+/* Projects - Glassmorphism with Neumorphic Border */
+.project {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(8px);
+    border: 2px solid #e4dbc5;
+    border-radius: 18px;
+    padding: 26px;
+    margin-bottom: 20px;
+    box-shadow: 
+        4px 4px 12px #bebebe,
+        -4px -4px 12px #ffffff;
+}
+
+/* Contact Form - Neumorphic Notebook */
+.contact-form {
+    background: #fffef8;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 
+        8px 8px 24px #bebebe,
+        -8px -8px 24px #ffffff,
+        0 2px 8px 2px rgba(0,0,0,0.04) inset;
+    border-left: 5px solid #bda77b;
+    position: relative;
+    background-image: repeating-linear-gradient(180deg, #f0e9d2 0 2px, transparent 2px 40px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #6d4c2b;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e4dbc5;
+    border-radius: 8px;
+    background: #f5f3eb;
+    box-shadow: 
+        2px 2px 8px #bebebe,
+        -2px -2px 8px #ffffff;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #bda77b;
+    box-shadow: 
+        0 0 0 3px #bda77b33;
+}
+
+.form-button {
+    background: #e0ded9;
+    color: #6d4c2b;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 
+        4px 4px 12px #bebebe,
+        -4px -4px 12px #ffffff;
+    margin-left: 40px;
+    transition: all 0.18s cubic-bezier(.4,2,.3,1);
+}
+
+.form-button:hover {
+    background: #f6f4ee;
+    box-shadow: 
+        2px 2px 6px #bebebe,
+        -2px -2px 6px #ffffff,
+        0 0 0 4px #bda77b44;
+}
+
+/* Footer - Embossed Neumorphic */
+.footer {
+    background: #e0ded9;
+    color: #bda77b;
+    text-align: center;
+    padding: 22px;
+    border-radius: 18px;
+    margin-top: 32px;
+    box-shadow: 
+        inset 2px 2px 8px #bebebe,
+        inset -2px -2px 8px #ffffff;
+    letter-spacing: 2px;
+}
+
+/* Custom Scrollbar Neumorphic */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #e0ded9;
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: #bda77b;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 #fff;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a8906f;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .name {
+        font-size: 2em;
+    }
+    .form-group, .form-button {
+        margin-left: 24px;
+    }
+    .nav-items {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
