@@ -8,7 +8,7 @@
       event.preventDefault();
 
       // Send email using EmailJS sendForm method
-      emailjs.sendForm('service_g4luy68', 'template_73cybip', this)
+      emailjs.sendForm('service_g4luy68', 'template_nsczfxd', this)
         .then(function(response) {
           alert('Email sent successfully!');
           console.log('SUCCESS:', response.status, response.text);
