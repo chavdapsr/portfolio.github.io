@@ -24,14 +24,14 @@
 
   <script>
     // Initialize EmailJS with your Public Key from EmailJS dashboard
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('gXgDqePCrg0m4E2Rw');
 
     // Handle form submission
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
       // Send email using EmailJS sendForm method
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      emailjs.sendForm('service_g4luy68', 'template_73cybip', this)
         .then(function(response) {
           alert('Email sent successfully!');
           console.log('SUCCESS:', response.status, response.text);
