@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --primary-light: #e0e5ec;
@@ -499,6 +500,48 @@
             color: var(--accent);
             transform: translateY(-3px);
         }
+        .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-light); /* matches neumorphic surface */
+    box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff; /* neumorphic shadow */
+    border-radius: 30px 30px 0 0; /* rounded top corners for soft look */
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    margin: 0 10px 10px 10px; /* spacing from edges */
+    z-index: 100;
+    transition: var(--transition);
+}
+
+body.dark-theme .bottom-nav {
+    background: var(--primary-dark);
+    box-shadow: 8px 8px 16px #0d0d0d, -8px -8px 16px #262626;
+}
+ 
+@media (max-width: 480px) {
+    .bottom-nav {
+        font-size: 0.7rem;
+        margin: 0 2px 2px 2px;
+        padding: 10px 0;
+    }
+}
+
+.contact-form {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    box-shadow: var(--neumorphic-shadow-light);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+body.dark-theme .contact-form {
+    box-shadow: var(--neumorphic-shadow-dark);
+}
 
         /* Responsive Design */
         @media (max-width: 950px) {
@@ -550,11 +593,11 @@
     <header>
         <div class="logo">Portfolio</div>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-share-alt"></i></a>
+            <a href="https://www.facebook.com/ahirpsr/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/psr_chavda?t=753D447jvpf0wDq2qYVlGQ&s=09"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/chavda-psr-b732b792/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/chavdapsr"><i class="fab fa-github"></i></a>
+            <a href="https://codepen.io/chavda-psr"><i class="fas fa-share-alt"></i></a>
         </div>
         <button class="theme-toggle" id="themeToggle">
             <i class="fas fa-moon"></i>
@@ -822,6 +865,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 });
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>
