@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
             --primary-light: #e0e5ec;
@@ -458,77 +457,60 @@
             box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
         }
 
-        /* Bottom Navigation */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--primary-light);
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            z-index: 100;
-            transition: var(--transition);
-        }
-
-        body.dark-theme .bottom-nav {
-            background: var(--primary-dark);
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-light);
-            font-size: 0.8rem;
-            transition: var(--transition);
-        }
-
-        body.dark-theme .nav-item {
-            color: var(--text-dark);
-        }
-
-        .nav-item i {
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-
-        .nav-item.active,
-        .nav-item:hover {
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
-        .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--primary-light); /* matches neumorphic surface */
-    box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff; /* neumorphic shadow */
-    border-radius: 30px 30px 0 0; /* rounded top corners for soft look */
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    margin: 0 10px 10px 10px; /* spacing from edges */
-    z-index: 100;
-    transition: var(--transition);
+       body {
+  background: #ecf0f3;
+}
+.neumorphism-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #ecf0f3;
+  box-shadow: 0 -8px 24px rgba(206, 206, 209, 0.2);
+  padding: 0.5rem 0;
+  z-index: 100;
+}
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ecf0f3;
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  box-shadow:
+    3px 3px 8px #ceced1,
+    -3px -3px 8px #ffffff;
+  transition: box-shadow 0.2s, background 0.2s;
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.menu-item.active,
+.menu-item:hover {
+  box-shadow:
+    inset 2px 2px 6px #ceced1,
+    inset -2px -2px 6px #ffffff;
+  background: #e2e6ea;
+}
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+.label {
+  font-size: 0.85rem;
+}
+@media (max-width: 600px) {
+  .label {
+    display: none;
+  }
+  .menu-item {
+    padding: 0.5rem;
+  }
 }
 
-body.dark-theme .bottom-nav {
-    background: var(--primary-dark);
-    box-shadow: 8px 8px 16px #0d0d0d, -8px -8px 16px #262626;
-}
- 
-@media (max-width: 480px) {
-    .bottom-nav {
-        font-size: 0.7rem;
-        margin: 0 2px 2px 2px;
-        padding: 10px 0;
-    }
-}
 
 .contact-form {
     background: var(--glass-bg);
@@ -595,12 +577,12 @@ body.dark-theme .contact-form {
         <div class="logo">Portfolio</div>
         <div class="social-icons">
             <a href="https://www.facebook.com/ahirpsr/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/psr_chavda?t=753D447jvpf0wDq2qYVlGQ&s=09"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/psr_chavda?t=753d447jvpf0wdq2qyvlgq&s=09"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/chavda-psr-b732b792/"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/chavdapsr"><i class="fab fa-github"></i></a>
             <a href="https://codepen.io/chavda-psr"><i class="fas fa-share-alt"></i></a>
         </div>
-        <button class="theme-toggle" id="themeToggle">
+        <button class="theme-toggle" id="themetoggle">
             <i class="fas fa-moon"></i>
         </button>
     </header>
@@ -608,7 +590,7 @@ body.dark-theme .contact-form {
     <!-- Profile Card -->
     <section class="profile-card" id="profile">
         <div class="profile-img">
-            <img src="psr.jpg" alt="Profile Photo">
+            <img src="img/psr.jpg" alt="Profile Photo">
         </div>
         <div class="profile-info">
             <h1>Chavda Psr</h1>
@@ -767,33 +749,36 @@ body.dark-theme .contact-form {
         </div>
     </section>
 
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-        <a href="#profile" class="nav-item active">
-            <i class="fas fa-user"></i>
-            <span>Profile</span>
-        </a>
-        <a href="#about" class="nav-item">
-            <i class="fas fa-info-circle"></i>
-            <span>About</span>
-        </a>
-        <a href="#skills" class="nav-item">
-            <i class="fas fa-code"></i>
-            <span>Skills</span>
-        </a>
-        <a href="#projects" class="nav-item">
-            <i class="fas fa-project-diagram"></i>
-            <span>Projects</span>
-        </a>
-        <a href="#certificates" class="nav-item">
-            <i class="fas fa-certificate"></i>
-            <span>Certificates</span>
-        </a>
-        <a href="#contact" class="nav-item">
-            <i class="fas fa-envelope"></i>
-            <span>Contact</span>
-        </a>
-    </nav>
+    <nav class="neumorphism-bottom-bar">
+  <a href="#profile" class="menu-item active" title="Home">
+    <span class="icon">
+      <!-- Home SVG -->
+      <svg width="24" height="24" fill="none"><rect width="24" height="24" rx="8" fill="#ecf0f3"/><path d="M4 12L12 5l8 7" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="13" width="8" height="6" rx="2" stroke="#6c5ce7" stroke-width="2"/></svg>
+    </span>
+    <span class="label">Home</span>
+  </a>
+  <a href="#skills" class="menu-item" title="Skills">
+    <span class="icon">
+      <!-- Search SVG -->
+      <svg width="24" height="24" fill="none"><rect width="24" height="24" rx="8" fill="#ecf0f3"/><circle cx="11" cy="11" r="6" stroke="#6c5ce7" stroke-width="2"/><line x1="16.5" y1="16.5" x2="20" y2="20" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+    <span class="label">Skills</span>
+  </a>
+  <a href="#projects" class="menu-item" title="Projects">
+    <span class="icon">
+      <!-- Folder SVG -->
+      <svg width="24" height="24" fill="none"><rect width="24" height="24" rx="8" fill="#ecf0f3"/><path d="M3 8a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z" stroke="#6c5ce7" stroke-width="2"/></svg>
+    </span>
+    <span class="label">Projects</span>
+  </a>
+  <a href="#contact" class="menu-item" title="Contact">
+    <span class="icon">
+      <!-- User SVG -->
+      <svg width="24" height="24" fill="none"><rect width="24" height="24" rx="8" fill="#ecf0f3"/><circle cx="12" cy="10" r="4" stroke="#6c5ce7" stroke-width="2"/><path d="M4 20c0-2.2 3.6-4 8-4s8 1.8 8 4" stroke="#6c5ce7" stroke-width="2"/></svg>
+    </span>
+    <span class="label">Contact</span>
+  </a>
+</nav>
 
     <script>
         // Theme Toggle
@@ -866,7 +851,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 });
 </script>
-<script src="script.js"></script>
-<script src="emailjs.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
