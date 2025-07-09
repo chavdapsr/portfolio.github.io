@@ -307,6 +307,13 @@ var bounce = new Bounce();
 bounce.scale({ from: { x: 1, y: 1 }, to: { x: 1.2, y: 1.2 }, duration: 500 });
 bounce.applyTo(document.getElementById('project1'));
 
+function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "YOUR_PUBLIC_KEY",
+            });
+        })();
+
  window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
