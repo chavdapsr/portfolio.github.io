@@ -310,7 +310,7 @@ bounce.applyTo(document.getElementById('project1'));
 function() {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init({
-              publicKey: "YOUR_PUBLIC_KEY",
+              publicKey: "nYiWxpcr7gz4GNm-y",
             });
         })();
 
