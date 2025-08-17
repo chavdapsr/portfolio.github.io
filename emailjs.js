@@ -2,7 +2,7 @@
   
     // Initialize EmailJS with your Public Key from EmailJS dashboard
     emailjs.init('nYiWxpcr7gz4GNm-y');
-    emailjs.sendForm('contact_service', 'contact_form', this);
+    emailjs.send("service_ogfwyms","template_ntpd1k8");
 
     // Handle form submission
     document.getElementById('contact-form').addEventListener('submit', function(event) {
